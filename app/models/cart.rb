@@ -20,7 +20,14 @@ class Cart < ActiveRecord::Base
     if line_items.inject(0) { |sum, i| sum += i.quantity} >= 10
       price = "#{price} <br/>Discount: - #{sprintf("$%0.2f", total_price*0.1)}"
       price = "#{price} <br/>Final: #{sprintf("$%0.2f", total_price*0.9)}"
-    end 
-    price
+    end
+      price
+    end
+    def paypal_price
+    price = sprintf("%0.2f", total_price)
+    if line_items.inject(0) { |sum, i| sum += i.quantity} >= 10
+      price = "#{sprintf("%0.2f", total_price*0.9)}"
+    end
+     price
   end
-end
+  end
