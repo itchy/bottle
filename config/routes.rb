@@ -2,6 +2,7 @@ Bubibottle::Application.routes.draw do
   
   resources :line_items
   match '/cart' => 'carts#show'
+  match '/payment/:id' => 'carts#payments', :as => 'payment', :method => :post
 
   root :to => 'home#index'
   match 'home/' => 'home#index'
@@ -14,6 +15,7 @@ Bubibottle::Application.routes.draw do
   match '/inventor' => 'home#inventor'
   match '/customize' => 'home#customize'
   match '/buy' => 'home#buy'
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

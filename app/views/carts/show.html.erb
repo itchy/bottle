@@ -10,5 +10,7 @@
 		<li><%= @cart.display_price.html_safe %></li>
 	</ul>
 	
-	<%= button_to("PAY", cart_path, :class => "add", :method => "get" )%>
+	<%#= button_to("PAY", cart_path, :class => "add", :method => "get" )%>
 </div>
+
+<%= render 'payment', {:cart => @cart } %>

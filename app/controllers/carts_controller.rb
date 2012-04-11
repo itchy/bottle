@@ -23,6 +23,12 @@ class CartsController < ApplicationController
       end
     end  
   end
+  
+  def payments
+    @cart = current_cart
+    flash[:notice] = "Making Payment!" 
+    render :show
+  end
 
   # # GET /carts/new
   # # GET /carts/new.json
