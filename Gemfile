@@ -16,7 +16,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'activemerchant'
+gem 'activemerchant', '1.20.0'
+# gem "stripe", "~> 1.6.3"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

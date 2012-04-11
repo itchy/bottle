@@ -3,10 +3,17 @@
 <div id="big_bottle">
 	<!-- js place holder for bottle transitions  -->
 </div>	
+
+
+
 <% if params[:action] == "buy" %>
 	<%= render :partial => "cart", :locals => { :cart => @cart, :notice => notice }%>
-<% elsif params[:controller] == "carts"-%>
+<% elsif params[:controller] == "carts" -%>
 	<!-- CART -->
+	<div id="cart_buttons">
+		<%= button_to("Empty Cart", line_items_path, :class => "cart", :method => "get" )%>
+		<%= button_to("Continue Shopping", "/buy", :class => "cart", :method => "get" )%>
+	</div>	
 <% else -%>
 	<div id="buy_now">
 		<%= link_to("Buy Now!", "/buy", :class => "button")%>

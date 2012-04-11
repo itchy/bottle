@@ -125,7 +125,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activemerchant
+  activemerchant (= 1.20.0)
   coffee-rails (~> 3.1.1)
   jquery-rails
   pg

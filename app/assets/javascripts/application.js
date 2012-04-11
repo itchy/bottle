@@ -15,9 +15,9 @@ $(document).ready(function() {
        sleep: 3,
        fade: 1
      }, [
-       { src: 'assets/products/pink_4.png' },
-       { src: 'assets/products/pink_5.png' },
-       { src: 'assets/products/pink_6.png' }
+       { src: '/assets/products/pink_4.png' },
+       { src: '/assets/products/pink_5.png' },
+       { src: '/assets/products/pink_6.png' }
      ])
    });
    
