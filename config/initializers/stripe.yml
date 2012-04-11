@@ -1,0 +1,5 @@
+stripe:
+  test_public_key:  your-public-test-key
+  test_private_key: your-private-test-key  
+  live_public_key: 	your-public-key
+	live_private_key: your-private-key

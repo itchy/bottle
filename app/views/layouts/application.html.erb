@@ -7,7 +7,7 @@
 	<script type="text/javascript" src="https://js.stripe.com/v1/"></script>
 	<script type="text/javascript">
 	    // this identifies your website in the createToken call below
-	    Stripe.setPublishableKey('STRIPE_PUBLIC_TEST_KEY');
+	    Stripe.setPublishableKey('<%=STRIPE_TEST_PUBLIC_KEY%>');
 	</script>
   <%= csrf_meta_tags %>
 </head>

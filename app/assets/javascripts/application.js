@@ -38,11 +38,13 @@ $(document).ready(function() {
 });
 
 function stripeResponseHandler(status, response) {
+    var form$ = $("#payment-form");
+    
     if (response.error) {
         // show the errors on the form
         $(".payment-errors").text(response.error.message);
+        form$.find('.submit-button').removeAttr("disabled", "disabled");
     } else {
-        var form$ = $("#payment-form");
         // token contains id, last4, and card type
         var token = response['id'];
         // insert the token into the form so it gets submitted to the server
