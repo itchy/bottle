@@ -1,30 +1,27 @@
 <%# testing cc# 4242424242424242%>
-<%= form_for(cart, :url => payment_path(cart) ) do |f| %>
 
-
-	<div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<hr /><hr />
 <div class="payment-errors">
 	<!-- show payment errors in here -->
-</div>	
-<form action="" method="POST" id="payment-form">
-    <div class="form-row">
-        <label>Card Number</label>
-        <input type="text" size="20" autocomplete="off" class="card-number"/>
-    </div>
-    <div class="form-row">
-        <label>CVC</label>
-        <input type="text" size="4" autocomplete="off" class="card-cvc"/>
-    </div>
-    <div class="form-row">
-        <label>Expiration (MM/YYYY)</label>
-        <input type="text" size="2" class="card-expiry-month"/>
-        <span> / </span>
-        <input type="text" size="4" class="card-expiry-year"/>
-    </div>
-    <button type="submit" class="submit-button">Submit Payment</button>
-</form>
+</div>
+
+<%= form_for(:payment, :url => payment_path(cart), :html => {:id => 'payment-form'} ) do |f| %>
+	<div class="form-row">
+	  <label>Card Number</label><br />
+	  <input type="text" size="20" autocomplete="off" class="card-number"/>
+  </div>
+  <div class="form-row">
+	  <label>CVC</label><br />
+	  <input type="text" size="4" autocomplete="off" class="card-cvc"/>
+  </div>
+  <div class="form-row">
+	  <label>Expiration (MM/YYYY)</label><br />
+		<span>
+		  <input type="text" size="2" class="card-expiry-month"/> /
+		  <input type="text" size="4" class="card-expiry-year"/>
+		</span>
+  </div>
+
+	<div class="actions">
+    <input value="Submit Payment" type="submit" class="cart submit-button" />
+  </div>
+<% end %>

@@ -1,16 +1,10 @@
 <div id="shopping_cart">
-	<% if notice %>
-		<p id="notice"><%= notice %></p>
-	<% end %>
-	<h2>Shopping Cart</h2>
+	<h2>Review Order</h2>
 	<ul>
 		<% @cart.line_items.each do |item| %>
-			<li><%= "#{item.quantity} x #{item.product.color} = #{item.display_price}"%></li>
+			<li><%= "#{item.product.color} x #{item.quantity} = #{item.display_price}"%></li>
 		<% end%>
 		<li><%= @cart.display_price.html_safe %></li>
 	</ul>
-	
-	<%#= button_to("PAY", cart_path, :class => "add", :method => "get" )%>
+	<%= button_to("Place Order", order_cart_path, :class => "cart", :method => "get" )%>
 </div>
-
-<%= render 'payment', {:cart => @cart } %>

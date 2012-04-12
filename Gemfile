@@ -34,4 +34,5 @@ gem "stripe", "~> 1.6.3"
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'rspec-rails', '~>2.8.0'
 end

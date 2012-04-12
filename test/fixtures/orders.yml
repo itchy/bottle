@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cart_details: MyString
+  total: MyString
+  number: MyString
+  stripe_token: MyString
+  collected: false
+  shiped: false
+
+two:
+  cart_details: MyString
+  total: MyString
+  number: MyString
+  stripe_token: MyString
+  collected: false
+  shiped: false

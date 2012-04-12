@@ -2,7 +2,8 @@ Bubibottle::Application.routes.draw do
   
   resources :line_items
   match '/cart' => 'carts#show'
-  match '/payment/:id' => 'carts#payments', :as => 'payment', :method => :post
+  match '/payment/:id' => 'carts#payment', :as => 'payment', :method => :post
+  match '/cart/order/' => 'carts#order', :as => 'order_cart', :method => :post
 
   root :to => 'home#index'
   match 'home/' => 'home#index'

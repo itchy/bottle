@@ -15,6 +15,12 @@ class Cart < ActiveRecord::Base
     line_items.inject(0) { |sum, i| sum += i.price }
   end
   
+  def details
+    ls = line_items.map {|l| l.details }
+    {line_items: ls.join(",")}
+  end
+  
+  
   def display_price
     price = "Total: " + sprintf("$%0.2f", total_price)
     if line_items.inject(0) { |sum, i| sum += i.quantity} >= 10

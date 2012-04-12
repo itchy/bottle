@@ -1,0 +1,5 @@
+<div id="shopping_cart">
+	<h2>Make Payment</h2>
+	<h2><%= @cart.display_price.html_safe %></h2>
+	<%= render 'payment', {:cart => @cart} %>
+</div>
