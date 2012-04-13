@@ -1,5 +1,7 @@
-<div id="shopping_cart">
-	<h2>Make Payment</h2>
-	<h2><%= @cart.display_price.html_safe %></h2>
-	<%= render 'payment', {:cart => @cart} %>
+<div id="payment-collection">
+	<h2>Order Details</h2>
+	<p>Thanks for placing your order with Bübi Bottle.  Your order is being processed and will be shipped to you within 48 hours.  An email with a tracking number will be sent when your order is shipped.  This way you can keep up with your Bübi Bottle all the way to your door.</p>
+	<p>Well, that would be the case if this were the real Bübi bottle site.  This is a test site that is not published.  Don't worry, your credit card will not be charged, but you will also not receive any Bübi Bottles.  To order a Bübi Bottle check out <%= link_to 'bubibottle.com', 'http://www.bubibottle.com' %></p>
+	
+	
 </div>

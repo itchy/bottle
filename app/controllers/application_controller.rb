@@ -16,4 +16,20 @@ private
     session[:cart_id] = cart.id
     cart
   end
+  
+  def clear_current_cart
+    session[:cart_id] = nil
+  end
+  
+  def current_order
+    Order.find(session[:order_id])
+  rescue ActiveRecord::RecordNotFound
+    order = Order.create
+    session[:order_id] = order.id
+    order
+  end
+  
+  def clear_current_order
+    session[:order_id] = nil
+  end
 end

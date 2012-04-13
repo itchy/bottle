@@ -24,13 +24,42 @@ class CartsController < ApplicationController
     end  
   end
   
-  def order
-    @cart = current_cart
+  # get shipping info
+  def shipping
+    @address = Address.new
   end
   
+  # verify shipping address & create order
   def payment
+    @address = Address.new(params[:address])
+    if @address.save
+      @cart = current_cart
+      @order = current_order
+      @order.address = @address
+      @order.cart_details = @cart.details
+      @order.total = @cart.total_price
+      @order.save!
+    else
+      render :shipping
+    end    
+  end
+  
+  # verify order and display sucessfull order
+  def order
     @cart = current_cart
-    render :order
+    @order = current_order
+    @order.stripe_token = params[:stripeToken]
+    @order.save!
+    charge = Stripe::Charge.create(
+      :amount => (@order.total.gsub(/\./,'')), # amount in cents, again
+      :currency => "usd",
+      :card => @order.stripe_token,
+      :description => @order.number
+    )
+    @order.charge = charge
+    @order.save!
+    clear_current_order
+    clear_current_cart
   end
 
   # # GET /carts/new

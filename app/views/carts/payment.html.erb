@@ -1,0 +1,5 @@
+<div id="payment-collection">
+	<h2>Enter Payment Info (Last Step)</h2>
+	<h2><%= @cart.display_price.html_safe %></h2>
+	<%= render 'payment', {:cart => @cart} %>
+</div>

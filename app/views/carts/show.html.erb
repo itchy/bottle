@@ -1,10 +1,10 @@
-<div id="shopping_cart">
-	<h2>Review Order</h2>
-	<ul>
+<div id="review-order">
+	<h2>Review Order (Step 1 of 3)</h2>
+	<ul class="none">
 		<% @cart.line_items.each do |item| %>
 			<li><%= "#{item.product.color} x #{item.quantity} = #{item.display_price}"%></li>
 		<% end%>
 		<li><%= @cart.display_price.html_safe %></li>
 	</ul>
-	<%= button_to("Place Order", order_cart_path, :class => "cart", :method => "get" )%>
+	<%= button_to("Enter Shipping", shipping_path, :class => "cart", :method => "get" )%>
 </div>

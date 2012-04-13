@@ -4,7 +4,7 @@
 	<!-- show payment errors in here -->
 </div>
 
-<%= form_for(:payment, :url => payment_path(cart), :html => {:id => 'payment-form'} ) do |f| %>
+<%= form_for(:payment, :url => order_path, :html => {:id => 'payment-form'} ) do |f| %>
 	<div class="form-row">
 	  <label>Card Number</label><br />
 	  <input type="text" size="20" autocomplete="off" class="card-number"/>

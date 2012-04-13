@@ -7,17 +7,24 @@ describe CartsController do
       { :get => "/cart" }.should route_to("carts#show")
     end
     
+    it "routes to #shipping" do
+      { :get => "shipping/" }.should route_to(
+        :controller => "carts",
+        :action => "shipping",
+        :method => :get
+       )
+    end
+
     it "routes to #payment" do
-      { :get => "payment/:id" }.should route_to(
+      { :get => "payment" }.should route_to(
         :controller => "carts",
         :action => "payment",
-        :method => :post,
-        :id => ":id"
+        :method => :post
        )
     end
     
     it "routes to #order" do
-      { :post => "/cart/order"}.should route_to(
+      { :post => "/order"}.should route_to(
         :controller => "carts",
         :action => "order",
         :method => :post,

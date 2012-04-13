@@ -1,7 +1,7 @@
 class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
-      t.string :cart_details
+      t.text :cart_details
       t.string :total
       t.string :number
       t.string :stripe_token
